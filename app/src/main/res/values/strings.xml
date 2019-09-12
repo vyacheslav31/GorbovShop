@@ -4,7 +4,13 @@
     <string name="splashscreen_background_image">splashscreen background image</string>
     <string name="munchbox_main_logo">munchbox main logo</string>
     <string name="dish1">Shrimp Pad Thai</string>
-    <string name="padthai_desc_text">Pad Thai is typical street fare across Thailand—and it\'s probably the #1 order at your local Thai restaurant. In fact, this popular stir-fried noodle dish is the national dish of Thailand. But what exactly is it about Pad Thai that makes it so delicious? Bold, umami flavors and a variety of textures make Pad Thai into a comforting meal that everyone can love.</string>
+    <string name="padthai_desc_text">Pad Thai is typical street fare across Thailand—and it\'s probably the #1
+        order at your local Thai restaurant. In fact, this popular stir-fried noodle dish is the national dish
+        of Thailand. But what exactly is it about Pad Thai that makes it so delicious? Bold, umami flavors and
+        a variety of textures make Pad Thai into a comforting meal that everyone can love.</string>
+    <string name="saltandpepperchicken_desc_text">When working in a Chinese restaurant, our most popular dish
+        was Salt and Pepper chicken and for good reason – it’s delicious! Wok fried spices and vegetables are
+        mixed with battered chicken breast to create the ultimate combination of salt, spice and crunch.</string>
     <string name="padthai_price_text">12$</string>
     <string name="plus_button_text">+</string>
     <string name="minus_button_text">−</string>
