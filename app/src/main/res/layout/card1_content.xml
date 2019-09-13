@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/card_title"
-        android:textSize="20sp"
-        android:textColor="#000"
-        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -18,7 +14,10 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:gravity="center"
         android:text="@string/dish1"
+        android:textColor="#000"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/card_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +29,7 @@
         android:layout_height="307dp"
         android:layout_marginEnd="8dp"
         android:adjustViewBounds="true"
+        android:contentDescription="@string/padthai_img_content_desc"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,11 +38,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.205"
         app:srcCompat="@drawable/padthai"
-        tools:visibility="visible"
-        android:contentDescription="@string/padthai_img_content_desc" />
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/add_itemQuantity_button"
+        android:onClick="addToCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -58,6 +58,7 @@
 
     <Button
         android:id="@+id/remove_itemQuantity_button"
+        android:onClick="removeFromCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -72,14 +73,14 @@
 
     <TextView
         android:id="@+id/padthai_desc_container"
-        android:gravity="center_horizontal"
         android:layout_width="300dp"
         android:layout_height="154dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/padthai_desc_text"
+        android:gravity="center_horizontal"
+        android:text="@string/dish1_desc_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,14 +88,14 @@
 
     <TextView
         android:id="@+id/card_price"
-        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="10dp"
         android:ems="10"
-        android:text="@string/padthai_price_text"
+        android:gravity="center"
+        android:text="@string/dish1_price_text"
         app:layout_constraintBottom_toTopOf="@+id/card_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,27 +103,23 @@
 
     <TextView
         android:id="@+id/quantity_textview"
-        android:gravity="center"
-        android:textSize="16sp"
-        android:textColor="#000"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:gravity="center"
         android:text="@string/quantity_text"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/padthai_desc_container" />
 
     <TextView
         android:id="@+id/subtotal_textview"
-        android:gravity="center"
-        android:textSize="16sp"
-        android:textColor="#000"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -130,7 +127,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
+        android:gravity="center"
         android:text="@string/padthai_subtotal_text"
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/quantity_textview"
