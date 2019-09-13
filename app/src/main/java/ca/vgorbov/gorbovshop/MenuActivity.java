@@ -6,6 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/**
+ * Menu Activity which allows the client to add or remove items from the cart, see item quantities
+ * and subtotals.
+ */
 public class MenuActivity extends AppCompatActivity {
 
     protected ShoppingCart cart;
@@ -18,30 +22,41 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
     }
 
+    // Event handler from when card 1 '+' button is pressed
     public void card1PlusButtonPressed(View view) {
         addToCart(view);
     }
 
+    // Event handler from when card 1 '-' button is pressed
     public void card1MinusButtonPressed(View view) {
         removeFromCart(view);
     }
 
+    // Event handler from when card 2 '+' button is pressed
     public void card2PlusButtonPressed(View view) {
         addToCart(view);
     }
 
+    // Event handler from when card 2 '-' button is pressed
     public void card2MinusButtonPressed(View view) {
         removeFromCart(view);
     }
 
+    // Event handler from when card 3 '+' button is pressed
     public void card3PlusButtonPressed(View view) {
         addToCart(view);
     }
 
+    // Event handler from when card 3 '-' button is pressed
     public void card3MinusButtonPressed(View view) {
         removeFromCart(view);
     }
 
+    /**
+     * General method which handles the button click events when items are added to the shopping cart.
+     *
+     * @param view
+     */
     public void addToCart(View view) {
         // Declare variables
         int priceValue;
@@ -88,6 +103,11 @@ public class MenuActivity extends AppCompatActivity {
         subtotal.setText("Subtotal: " + cart.countItemsById(layout.getId()) * priceValue);
     }
 
+    /**
+     * General method which handles the button click events when items are removed from the shopping
+     * cart.
+     * @param view
+     */
     public void removeFromCart(View view) {
         // Declare variables
         int priceValue;
@@ -119,8 +139,6 @@ public class MenuActivity extends AppCompatActivity {
             // Update Subtotal
             subtotal.setText("Subtotal: " + cart.countItemsById(layout.getId()) * priceValue);
         }
-
-
 
 
     }
