@@ -15,10 +15,12 @@ import org.w3c.dom.Text;
 
 public class MenuActivity extends AppCompatActivity {
 
-    Button addToCartButton;
-    Button removeFromCartButton;
-    TextView qtyTextView;
-    TextView subtotalTextView;
+    int priceValue;
+    int subtotalValue;
+    String priceStr;
+    String subtotalStr;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,17 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void addToCart(View view) {
+
+
         ViewGroup layout = (ViewGroup) view.getParent();
         TextView price = (TextView) layout.getChildAt(5);
+
+        priceStr = (String) price.getText();
+        priceStr = priceStr.substring(0 , 3);
+
+        priceValue = Integer.parseInt(priceStr);
+
+
     }
 
     public void removeFromCart(View view) {
