@@ -1,3 +1,5 @@
+package ca.vgorbov.gorbovshop;
+
 import java.util.ArrayList;
 
 public class ShoppingCart {

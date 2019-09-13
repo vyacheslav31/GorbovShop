@@ -1,7 +1,12 @@
+package ca.vgorbov.gorbovshop;
+
 public class MenuItem {
     private String itemName;
     private int itemPrice;
     private int itemCode;
+
+    public MenuItem() {
+    }
 
     public MenuItem(String itemName, int itemPrice, int itemCode) {
         this.itemName = itemName;
@@ -33,11 +38,4 @@ public class MenuItem {
         this.itemPrice = itemPrice;
     }
 
-    @Override
-    public String toString() {
-        return "MenuItem{" +
-                "itemName='" + itemName + '\'' +
-                ", itemPrice=" + itemPrice +
-                '}';
-    }
 }
