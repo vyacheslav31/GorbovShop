@@ -17,8 +17,14 @@ public class MenuActivity extends AppCompatActivity {
 
     int priceValue;
     int subtotalValue;
+    int qtyValue;
     String priceStr;
     String subtotalStr;
+    String qtyStr;
+    ViewGroup layout;
+    TextView price;
+    TextView quantity;
+    TextView subtotal;
 
 
 
@@ -31,14 +37,29 @@ public class MenuActivity extends AppCompatActivity {
 
     public void addToCart(View view) {
 
+        // Get the price, quantity and subtotal 'views'
+        layout = (ViewGroup) view.getParent();
+        price = (TextView) layout.getChildAt(5);
+        quantity = (TextView) layout.getChildAt(6);
+        subtotal = (TextView) layout.getChildAt(7);
 
-        ViewGroup layout = (ViewGroup) view.getParent();
-        TextView price = (TextView) layout.getChildAt(5);
 
+        // Convert price to an int
         priceStr = (String) price.getText();
         priceStr = priceStr.substring(0 , 3);
-
         priceValue = Integer.parseInt(priceStr);
+
+        // Convert quantity to an int
+        qtyStr = (String) quantity.getText();
+        qtyStr = qtyStr.substring(10);
+        qtyValue = Integer.parseInt(qtyStr);
+
+        // Convert Subtotal to an int
+        subtotalStr = (String) subtotal.getText();
+        subtotalStr = subtotalStr.substring(10);
+        subtotalValue = Integer.parseInt(subtotalStr);
+
+
 
 
     }
