@@ -14,8 +14,9 @@
         Wok fried spices and vegetables are mixed with battered chicken breast to create the ultimate combination of salt, spice and crunch.</string>
     <string name="dish3_desc_text"> Creamy avocadoes and tangy tomatoes are mixed with fresh lettuce to make a healthy and scrumptious meal.
     The salad is topped with a sumptuous caesar salad dressing and is dotted with seasoned breadcrumbs and chili flakes.</string>
-    <string name="dish1_price_text">12$</string>
-    <string name="dish2_price_text">10$</string>
+    <string name="dish1_price_text">$12</string>
+    <string name="dish2_price_text">$10</string>
+    <string name="dish3_price_text">$8</string>
     <string name="plus_button_text">+</string>
     <string name="minus_button_text">−</string>
     <string name="padthai_img_content_desc">A vibrant image of a pad thai dish</string>

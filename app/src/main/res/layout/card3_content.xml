@@ -43,6 +43,7 @@
 
     <Button
         android:id="@+id/add_itemQuantity_button_3"
+        android:onClick="card3PlusButtonPressed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -58,6 +59,7 @@
 
     <Button
         android:id="@+id/remove_itemQuantity_button_3"
+        android:onClick="card3MinusButtonPressed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -94,7 +96,7 @@
         android:layout_marginBottom="10dp"
         android:ems="10"
         android:gravity="center"
-        android:text="@string/dish2_price_text"
+        android:text="@string/dish3_price_text"
         app:layout_constraintBottom_toTopOf="@+id/card_image_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

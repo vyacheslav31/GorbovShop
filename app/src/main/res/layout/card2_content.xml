@@ -43,6 +43,7 @@
 
     <Button
         android:id="@+id/add_itemQuantity_button_2"
+        android:onClick="card2PlusButtonPressed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -58,6 +59,7 @@
 
     <Button
         android:id="@+id/remove_itemQuantity_button_2"
+        android:onClick="card2MinusButtonPressed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

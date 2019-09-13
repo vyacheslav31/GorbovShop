@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ShoppingCart {
     private int itemCount;
     private int cartSubtotal;
-    ArrayList<MenuItem> cart;
+    private ArrayList<MenuItem> cart;
 
     public ShoppingCart() {
         cart = new ArrayList<>();
@@ -40,5 +40,23 @@ public class ShoppingCart {
 
     public int getCartSubtotal() {
         return cartSubtotal;
+    }
+
+    public MenuItem getItemById(int id) {
+        for (MenuItem item : cart)
+            if (item.getItemCode() == id)
+                return item;
+        return null;
+    }
+
+    public int countItemsById(int id) {
+        int count = 0;
+
+        for (MenuItem item : cart)
+            if (item.getItemCode() == id) {
+                count++;
+            }
+
+        return count;
     }
 }

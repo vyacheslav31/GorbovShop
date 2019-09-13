@@ -1,35 +1,14 @@
 package ca.vgorbov.gorbovshop;
 
-import android.app.ActionBar;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class MenuActivity extends AppCompatActivity {
 
     protected ShoppingCart cart;
-    private int priceValue;
-    private int subtotalValue;
-    private int qtyValue;
-    private String itemNameStr;
-    private String priceStr;
-    private String subtotalStr;
-    private String qtyStr;
-    private ViewGroup layout;
-    private TextView itemName;
-    private TextView price;
-    private TextView quantity;
-    private TextView subtotal;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +18,41 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
     }
 
+    public void card1PlusButtonPressed(View view) {
+        addToCart(view);
+    }
+
+    public void card1MinusButtonPressed(View view) {
+        removeFromCart(view);
+    }
+
+    public void card2PlusButtonPressed(View view) {
+        addToCart(view);
+    }
+
+    public void card2MinusButtonPressed(View view) {
+        removeFromCart(view);
+    }
+
+    public void card3PlusButtonPressed(View view) {
+        addToCart(view);
+    }
+
+    public void card3MinusButtonPressed(View view) {
+        removeFromCart(view);
+    }
+
     public void addToCart(View view) {
+        // Declare variables
+        int priceValue;
+        String itemNameStr;
+        String priceStr;
+        ViewGroup layout;
+        TextView itemName;
+        TextView price;
+        TextView quantity;
+        TextView subtotal;
+
         // Create new menuItem
         MenuItem newItem = new MenuItem();
 
@@ -61,28 +74,55 @@ public class MenuActivity extends AppCompatActivity {
 
         // Get price string, convert to int and set item price
         priceStr = (String) price.getText();
-        priceStr = priceStr.substring(0 , 3);
+        priceStr = priceStr.substring(1);
         priceValue = Integer.parseInt(priceStr);
         newItem.setItemPrice(priceValue);
 
+        // Add item to cart
         cart.addItem(newItem);
+
+        // Update Quantity
+        quantity.setText("Quantity: " + cart.countItemsById(layout.getId()));
+
+        // Update Subtotal
+        subtotal.setText("Subtotal: " + cart.countItemsById(layout.getId()) * priceValue);
     }
 
     public void removeFromCart(View view) {
+        // Declare variables
+        int priceValue;
+        String priceStr;
+        ViewGroup layout;
+        TextView price;
+        TextView quantity;
+        TextView subtotal;
+
+        // Get the entire ViewGroup layout
+        layout = (ViewGroup) view.getParent();
+
+        // Remove item and if successful update cart and quantity/subtotal
+        if (cart.removeItem(cart.getItemById(layout.getId()))) {
+
+            // Get the price, quantity, itemName and subtotal 'views'
+            price = (TextView) layout.getChildAt(5);
+            quantity = (TextView) layout.getChildAt(6);
+            subtotal = (TextView) layout.getChildAt(7);
+
+            // Get price string, convert to int and set item price
+            priceStr = (String) price.getText();
+            priceStr = priceStr.substring(1);
+            priceValue = Integer.parseInt(priceStr);
+
+            // Update Quantity
+            quantity.setText("Quantity: " + cart.countItemsById(layout.getId()));
+
+            // Update Subtotal
+            subtotal.setText("Subtotal: " + cart.countItemsById(layout.getId()) * priceValue);
+        }
+
+
+
+
     }
 
-    public void updateQuantity() {
-        // Get and convert quantity string to an int
-        qtyStr = (String) quantity.getText();
-        qtyStr = qtyStr.substring(10);
-        qtyValue = Integer.parseInt(qtyStr);
-    }
-
-    public void updateSubtotal() {
-        // Get and convert subtotal string to an int
-        subtotalStr = (String) subtotal.getText();
-        subtotalStr = subtotalStr.substring(10);
-        subtotalValue = Integer.parseInt(subtotalStr);
-
-    }
 }
