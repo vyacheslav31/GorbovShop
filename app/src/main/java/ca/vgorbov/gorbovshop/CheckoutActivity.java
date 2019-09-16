@@ -13,4 +13,8 @@ public class CheckoutActivity extends AppCompatActivity {
         Intent intent = getIntent();
         ShoppingCart cart = intent.getParcelableExtra("Cart");
     }
+
+
+
+
 }
