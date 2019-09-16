@@ -1,5 +1,6 @@
 package ca.vgorbov.gorbovshop;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -143,4 +144,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+    public void launchCheckout(View view) {
+        Intent intent = new Intent(MenuActivity.this, CheckoutActivity.class);
+        intent.putExtra("Cart", cart);
+        startActivity(intent);
+    }
 }

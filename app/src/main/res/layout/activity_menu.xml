@@ -34,6 +34,13 @@
                 <include layout="@layout/card3_content" />
             </android.support.v7.widget.CardView>
 
+            <Button
+                android:id="@+id/checkout_button"
+                android:onClick="launchCheckout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/checkout_button_text" />
+
 
         </LinearLayout>
 </ScrollView>
