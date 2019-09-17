@@ -9,8 +9,8 @@ If this were an actual application and not an assignment, this paragraph would c
 
 ---
 
-Creator Name: Vyacheslav Gorbov
-Teacher Name: Tassia Camoes-Araujo
-Course Name: Graphical & Wireless Programming
-Course Code: 420-408-VA
+Creator Name: Vyacheslav Gorbov<br />
+Teacher Name: Tassia Camoes-Araujo<br />
+Course Name: Graphical & Wireless Programming<br />
+Course Code: 420-408-VA<br />
 Due date: 2019/09/20 
