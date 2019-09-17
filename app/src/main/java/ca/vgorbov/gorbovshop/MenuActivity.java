@@ -146,6 +146,10 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Method to launch the checkout activity
+     * @param view is the 'proceed to checkout' button view
+     */
     public void launchCheckout(View view) {
         Intent intent = new Intent(MenuActivity.this, CheckoutActivity.class);
         intent.putExtra("Cart", cart);

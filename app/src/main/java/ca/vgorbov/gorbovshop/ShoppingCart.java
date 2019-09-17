@@ -10,11 +10,13 @@ public class ShoppingCart implements Parcelable {
     private int cartSubtotal;
     private ArrayList<MenuItem> cart;
 
+    // Default Constructor
     public ShoppingCart() {
         cart = new ArrayList<>();
         itemCount = 0;
         cartSubtotal = 0;
     }
+
 
     protected ShoppingCart(Parcel in) {
         itemCount = in.readInt();
