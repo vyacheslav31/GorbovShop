@@ -8,6 +8,8 @@
 
     <TextView
         android:id="@+id/checkout_textview"
+        android:fontFamily="monospace"
+        android:textSize="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

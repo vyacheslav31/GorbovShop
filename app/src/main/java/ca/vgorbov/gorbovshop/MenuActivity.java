@@ -88,7 +88,6 @@ public class MenuActivity extends AppCompatActivity {
 
         // Assign code to new item
         newItem.setItemCode(layout.getId());
-        Log.d("Layout ID: ", "" + layout.getId());
 
         // Get price string, convert to int and set item price
         priceStr = (String) price.getText();

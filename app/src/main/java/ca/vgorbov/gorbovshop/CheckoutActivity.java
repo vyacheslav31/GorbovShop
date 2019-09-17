@@ -27,12 +27,17 @@ public class CheckoutActivity extends AppCompatActivity {
         double tvq = cart.getCartSubtotal() * 0.0975;
         double total = cartSubtotal + tps + tvq;
         ArrayList<Integer> ids = cart.getIds();
-        checkoutTextView.setText(String.format("%-45s%-20s%s", "Item", "Qty", "Price\n"));
-        checkoutTextView.append("-------------------------------------------------------------------------\n");
-        checkoutTextView.append(String.format("\n%-36s%-20s%s", cart.getItemNameById(ids.get(0)), cart.getItemQtyById(ids.get(0)), cart.getItemPriceById(ids.get(0))));
-        checkoutTextView.append(String.format("\n%-30s%-20s%s", cart.getItemNameById(ids.get(1)), cart.getItemQtyById(ids.get(1)), cart.getItemPriceById(ids.get(1))));
-        checkoutTextView.append(String.format("\n%-37s%-20s%s", cart.getItemNameById(ids.get(2)), cart.getItemQtyById(ids.get(2)), cart.getItemPriceById(ids.get(2))));
-        checkoutTextView.append(String.format("\n\n\n\n\nSubtotal: %d\nTPS: %.2f\nTVQ: %.2f\nTotal: %.2f", cartSubtotal, tps, tvq, total));
+        checkoutTextView.setText(String.format("%-25s%-10s%s", "Item", "Qty", "Price\n"));
+        checkoutTextView.append("--------------------------------------------\n");
+
+        if (!ids.isEmpty()) {
+            for (int id : ids) {
+                checkoutTextView.append(String.format("\n%-26s%-10s%s\n", cart.getItemNameById(id), cart.getItemQtyById(id), cart.getItemPriceById(id)));
+            }
+            checkoutTextView.append(String.format("\n\n\n\n\nSubtotal: %d\nTPS: %.2f\nTVQ: %.2f\nTotal: %.2f$", cartSubtotal, tps, tvq, total));
+        }
+
+        checkoutTextView.append("\n\nThank you very much for using my application!\nHave a great day :)");
     }
 
 }
