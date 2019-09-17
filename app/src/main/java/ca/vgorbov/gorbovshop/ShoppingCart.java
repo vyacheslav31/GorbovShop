@@ -66,16 +66,29 @@ public class ShoppingCart implements Parcelable {
         return null;
     }
 
-    @Override
-    public String toString() {
-        return "ShoppingCart{" +
-                "itemCount=" + itemCount +
-                ", cartSubtotal=" + cartSubtotal +
-                ", cart=" + cart.toString() +
-                '}';
+    public int getItemQtyById(int id) {
+        int qty = 0;
+
+        for (MenuItem item : cart)
+            if (item.getItemCode() == id) {
+                qty++;
+            }
+
+        return qty;
     }
 
-    public int countItemsById(int id) {
+    public String getItemNameById(int id) {
+        String name = "";
+
+        for (MenuItem item : cart)
+        if (item.getItemCode() == id) {
+            return item.getItemName();
+        }
+
+        return null;
+    }
+
+    public int getItemCountById(int id) {
         int count = 0;
 
         for (MenuItem item : cart)
@@ -84,6 +97,26 @@ public class ShoppingCart implements Parcelable {
             }
 
         return count;
+    }
+
+    public int getItemPriceById(int id) {
+        for (MenuItem item : cart)
+            if (item.getItemCode() == id) {
+                return item.getItemPrice();
+            }
+
+        return 0;
+    }
+
+    public ArrayList<Integer> getIds() {
+        ArrayList<Integer> uniqueIds = new ArrayList();
+
+        for (MenuItem item : cart)
+            if (!uniqueIds.contains(item.getItemCode())) {
+                uniqueIds.add(item.getItemCode());
+            }
+
+        return uniqueIds;
     }
 
     @Override

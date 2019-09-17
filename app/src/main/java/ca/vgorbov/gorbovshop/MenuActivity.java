@@ -2,13 +2,10 @@ package ca.vgorbov.gorbovshop;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 /**
@@ -60,7 +57,7 @@ public class MenuActivity extends AppCompatActivity {
     /**
      * General method which handles the button click events when items are added to the shopping cart.
      *
-     * @param view
+     * @param view is the button view
      */
     public void addToCart(View view) {
         // Declare variables
@@ -91,6 +88,7 @@ public class MenuActivity extends AppCompatActivity {
 
         // Assign code to new item
         newItem.setItemCode(layout.getId());
+        Log.d("Layout ID: ", "" + layout.getId());
 
         // Get price string, convert to int and set item price
         priceStr = (String) price.getText();
@@ -102,16 +100,16 @@ public class MenuActivity extends AppCompatActivity {
         cart.addItem(newItem);
 
         // Update Quantity
-        quantity.setText("Quantity: " + cart.countItemsById(layout.getId()));
+        quantity.setText("Quantity: " + cart.getItemCountById(layout.getId()));
 
         // Update Subtotal
-        subtotal.setText("Subtotal: " + cart.countItemsById(layout.getId()) * priceValue);
+        subtotal.setText("Subtotal: " + cart.getItemCountById(layout.getId()) * priceValue);
     }
 
     /**
      * General method which handles the button click events when items are removed from the shopping
      * cart.
-     * @param view
+     * @param view is the button view
      */
     public void removeFromCart(View view) {
         // Declare variables
@@ -139,10 +137,10 @@ public class MenuActivity extends AppCompatActivity {
             priceValue = Integer.parseInt(priceStr);
 
             // Update Quantity
-            quantity.setText("Quantity: " + cart.countItemsById(layout.getId()));
+            quantity.setText("Quantity: " + cart.getItemCountById(layout.getId()));
 
             // Update Subtotal
-            subtotal.setText("Subtotal: " + cart.countItemsById(layout.getId()) * priceValue);
+            subtotal.setText("Subtotal: " + cart.getItemCountById(layout.getId()) * priceValue);
         }
 
 
