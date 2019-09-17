@@ -70,4 +70,13 @@ public class MenuItem implements Parcelable {
         dest.writeInt(itemPrice);
         dest.writeInt(itemCode);
     }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "itemName='" + itemName + '\'' +
+                ", itemPrice=" + itemPrice +
+                ", itemCode=" + itemCode +
+                '}';
+    }
 }

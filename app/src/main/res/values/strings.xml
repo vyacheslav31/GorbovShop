@@ -23,4 +23,5 @@
     <string name="quantity_text">Quantity: 0</string>
     <string name="padthai_subtotal_text">Subtotal: 0</string>
     <string name="checkout_button_text">Proceed To Checkout</string>
+    <string name="checkout_textview">TextView</string>
 </resources>

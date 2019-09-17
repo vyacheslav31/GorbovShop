@@ -103,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/card_title" />
 
     <TextView
-        android:id="@+id/quantity_textview"
+        android:id="@+id/quantity_textview_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -120,7 +120,7 @@
         app:layout_constraintTop_toBottomOf="@+id/padthai_desc_container" />
 
     <TextView
-        android:id="@+id/subtotal_textview"
+        android:id="@+id/subtotal_textview_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -135,7 +135,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/quantity_textview"
+        app:layout_constraintStart_toEndOf="@+id/quantity_textview_1"
         app:layout_constraintTop_toBottomOf="@+id/padthai_desc_container" />
 
 

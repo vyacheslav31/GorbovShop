@@ -66,6 +66,15 @@ public class ShoppingCart implements Parcelable {
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "ShoppingCart{" +
+                "itemCount=" + itemCount +
+                ", cartSubtotal=" + cartSubtotal +
+                ", cart=" + cart.toString() +
+                '}';
+    }
+
     public int countItemsById(int id) {
         int count = 0;
 

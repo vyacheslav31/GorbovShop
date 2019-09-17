@@ -18,7 +18,6 @@ import android.widget.TextView;
 public class MenuActivity extends AppCompatActivity {
 
     protected ShoppingCart cart;
-    private int cardCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,31 +152,5 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(MenuActivity.this, CheckoutActivity.class);
         intent.putExtra("Cart", cart);
         startActivity(intent);
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-        // Save UI state changes to the savedInstanceState.
-        // This bundle will be passed to onCreate if the process is
-        // killed and restarted.
-        savedInstanceState.putParcelable("Cart", cart);
-        // etc.
-    }
-
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        // Restore UI state from the savedInstanceState.
-        // This bundle has also been passed to onCreate.
-        ShoppingCart cart = savedInstanceState.getParcelable("Cart");
-/**
-        // Restore Values to Each Card
-        LinearLayout linearLayout = findViewById(R.id.scroll_layout);
-        CardView[] cardViews = new CardView[linearLayout]
-
-        for (int i = 0; i < linearLayout.getChildCount(); i++)
- **/
-
     }
 }
